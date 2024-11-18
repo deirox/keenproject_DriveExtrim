@@ -775,12 +775,16 @@
             </div>
     </section>
 
-    <button onclick="ym(98872978,'reachGoal','accept_offer');
+    <button onclick="
+        ym(98872978, 'getClientID', function(clientID) {
+                    ym(98872978,'reachGoal','accept_offer');
                     ym(98872978, 'userParams', {
+                      client_id: clientID,
                       accept_offer_id: Math.floor(Math.random()*1000000),
                       accept_offer_datetime: new Date(), //дата и время
                     });
-        console.log('offer_id'+new Date())
+                    console.log('offer_id'+new Date())
+        });
         ">
         water fiji
     </button>
